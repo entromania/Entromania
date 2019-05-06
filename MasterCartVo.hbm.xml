@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="Vo.MasterCartVo" table="MasterCart">
+  
+  <id name="mastercartId" type="int" column="MastercartId" >
+   <generator class="increment"/>
+  </id>
+  
+  <property name="address">
+   <column name="Address" />
+  </property> 
+
+  <property name="status">
+   <column name="status" />
+  </property>
+ 
+   <property name="total" type="int">
+   <column name="Total" />
+  </property>
+  
+ 	<many-to-one name="loginVo" class="Vo.LoginVo" column="LoginId"></many-to-one>
+ 
+ </class>
+</hibernate-mapping>

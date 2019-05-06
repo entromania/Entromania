@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="Vo.HeroesVo" table="Heroes">
+  
+  <id name="heroId" type="int" column="HeroId" >
+   <generator class="increment"/>
+  </id>
+
+  <property name="heroName">
+   <column name="HeroName" />
+  </property>
+  
+    <property name="heroPosition">
+   <column name="HeroPostion" />
+  </property>
+  
+  <property name="heroDob">
+   <column name="HeroDOB" />
+  </property>
+  
+  <property name="heroAge" type="int">
+   <column name="HeroAge" />
+  </property>
+
+
+  <many-to-one name="attachmentVo" class="Vo.attachmentVo" column="AttachmentId"></many-to-one> 
+ 
+ </class>
+</hibernate-mapping>
